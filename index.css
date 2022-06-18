@@ -1,0 +1,21 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+label {
+    color: gray;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.texto-negrito {
+    font-weight: bold;
+    color: white;
+}
+
+form .form-group {
+    margin: 10px 5px 3px 15px;
+    background-color: blue;
+    color: white;
+}
