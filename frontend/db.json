@@ -1,0 +1,36 @@
+{
+  "departments": [
+    {
+      "name": "Teste123",
+      "id": 1
+    },
+    {
+      "name": "Test12322",
+      "id": 2
+    }
+  ],
+  "professors": [],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "title": "Testando 1",
+      "author": "Keven 1",
+      "aaa": "1123123",
+      "id": 2
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

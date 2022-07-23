@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import TableComponent from "../Table"
 import axios from '../../utils/axios'
 
-const ListView = ({addButton, columns, endpoint}) => {
+const ListView = ({addButton, actions, columns, endpoint}) => {
     const [rows, setRows] = useState([]);
 
     async function getData() {
@@ -24,7 +24,8 @@ const ListView = ({addButton, columns, endpoint}) => {
             <div className="d-flex justify-content-end">
                 {addButton}
             </div>
-            <TableComponent columns={columns} rows={rows} />
+            
+            <TableComponent actions={actions} columns={columns} rows={rows} />
         </>
     )
 }

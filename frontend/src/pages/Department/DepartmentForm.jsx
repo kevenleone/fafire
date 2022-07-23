@@ -3,11 +3,12 @@ import {Form, Button} from 'react-bootstrap'
 import axios from '../../utils/axios'
 import {toast} from 'react-toastify'
 import { useState } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { useEffect } from "react"
 
 const DepartmentForm = () => {
     const [department, setDepartment] = useState({});
+    const navigate = useNavigate();
     const {id} = useParams()
 
     const isNew = id === "new";
@@ -31,6 +32,7 @@ const DepartmentForm = () => {
         const form = {
             name: department.name
         }
+
         try {
             if (isNew) {
                 await axios.post('/departments', form);
@@ -38,7 +40,8 @@ const DepartmentForm = () => {
                 await axios.put(`/departments/${id}`, form)
             }
 
-            toast("Department Saved")
+            toast.success("Department Saved")
+            navigate("/department");
         } catch (error) {
             console.error(error)
             toast.error("Department Saved")
@@ -58,7 +61,10 @@ const DepartmentForm = () => {
             </Form.Group>
 
           <div className="w-100">
-            <Button variant="secondary">Cancel</Button>
+            <Button 
+                variant="secondary" 
+                onClick={() => navigate("/department")}>Cancel
+            </Button>
             <Button className="mx-2" onClick={onSave}>Save Department</Button>
           </div>
         </Form>

@@ -1,13 +1,20 @@
-import {Link, Outlet} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import Container from '../../components/Container'
 import ListView from '../../components/ListView'
 
 function Department() {
+
+    const actions = [
+        {label: "Edit", onClick: (department) => console.log(department)},
+        {label: "Remove", onClick: (department) => console.log(department)}
+    ];
+
     return <Container title="Department">
         <ListView
             addButton={
                 <Link className='btn btn-primary float-right' to="/department/new">Add Department</Link>
             }
+            actions={actions}
             columns={[
             {
                 key: 'id',
@@ -17,8 +24,6 @@ function Department() {
                 label: 'Name'
             }]} 
             endpoint="/departments" />
-
-            <Outlet></Outlet>
     </Container>
 }
 
