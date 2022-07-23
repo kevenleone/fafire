@@ -28,11 +28,11 @@ const TableComponent = ({ actions = [], columns = [], rows = [] }) => {
                   <Dropdown>
                     <Dropdown.Toggle variant="secondary" id="dropdown-basic">
                       Actions
-                    </Dropdown.Toggle>
+                    </Dropdown.Toggle>  
 
                     <Dropdown.Menu>
                         {actions.map((action, index) => (
-                            <Dropdown.Item key={index} onClick={action.onClick}>
+                            <Dropdown.Item key={index} onClick={() => action.onClick(row)}>
                                 {action.label}
                             </Dropdown.Item>
                         ))}

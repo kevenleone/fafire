@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import TableComponent from "../Table"
 import axios from '../../utils/axios'
 
-const ListView = ({addButton, actions, columns, endpoint}) => {
+const ListView = ({addButton, actions, columns, endpoint, forceRefetch}) => {
     const [rows, setRows] = useState([]);
 
     async function getData() {
@@ -17,7 +17,7 @@ const ListView = ({addButton, actions, columns, endpoint}) => {
 
     useEffect(() => {
         getData()
-    }, [])
+    }, [forceRefetch])
 
     return (
         <>

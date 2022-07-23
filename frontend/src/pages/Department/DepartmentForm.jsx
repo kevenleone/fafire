@@ -7,7 +7,9 @@ import { useParams, useNavigate } from "react-router-dom"
 import { useEffect } from "react"
 
 const DepartmentForm = () => {
-    const [department, setDepartment] = useState({});
+    const [department, setDepartment] = useState({
+        name: ''
+    });
     const navigate = useNavigate();
     const {id} = useParams()
 
@@ -44,12 +46,12 @@ const DepartmentForm = () => {
             navigate("/department");
         } catch (error) {
             console.error(error)
-            toast.error("Department Saved")
+            toast.error("Error to Save Department")
         }
     }
 
     return (
-        <Container title="Create Department">
+        <Container title={`${isNew ? "Create" : "Update"} Department`}>
            <Form>
             <Form.Group className="mb-4">
                 <label>Name</label>

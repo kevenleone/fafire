@@ -1,15 +1,28 @@
 {
   "departments": [
     {
-      "name": "Teste123",
+      "name": "Financeiro",
       "id": 1
     },
     {
-      "name": "Test12322",
+      "name": "Juridico",
       "id": 2
     }
   ],
-  "professors": [],
+  "professors": [
+    {
+      "name": "Keven",
+      "cpf": "123.421.121-12",
+      "departmentId": "1",
+      "id": 1
+    },
+    {
+      "name": "Jose",
+      "cpf": "123123123123",
+      "departmentId": "2",
+      "id": 2
+    }
+  ],
   "posts": [
     {
       "id": 1,
